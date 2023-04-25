@@ -1,0 +1,44 @@
+import os, time
+listOfEmail = []
+
+def prettyPrint():
+  os.system("clear")
+  print("listOfEmail")
+  print()
+  for index in range(len(listOfEmail)):
+    print(f"{index}: {listOfEmail[index]}")
+  time.sleep(1)
+
+def spam(max):
+  for i in range(0,max):
+    print(f"""
+    Email {i+1}
+    
+Dear {listOfEmail[i]}
+Heard that you are coding these days
+good that your trying the best of ability
+try and code hard and make your life simple
+easy and worth living as you desire it to be.
+
+Thanks regards,
+Coder""")
+    time.sleep(1)
+    os.system("clear")
+    
+while True:
+  print("SPAMMER Inc.")
+  menu = input("1: Add email\n2:Remove email\n3: Show email\n4: Get SPAMMING\n>")
+  if menu == "1":
+    email = input("Email > ")
+    listOfEmail.append(email)
+  elif menu== "2":
+    email = input("Email > ")
+    if email in listOfEmail:
+      listOfEmail.remove(email)
+
+  elif menu == "3":
+    prettyPrint()
+  elif menu =="4":
+    spam(1)
+  time.sleep(1)
+  os.system("clear")
